@@ -1,44 +1,42 @@
-import java.util.Scanner;
+//class hewan
+class Hewan {
 
+    //atribut
+    String Nama;
+    String Jenis;
+    String Suara;
+    String Kulit;
+
+    //method menampilkan informasi hewan
+    void tampilkanInfo() {
+        System.out.println("Nama: " + Nama);
+        System.out.println("Jenis: " + Jenis);
+        System.out.println("Suara: " + Suara);
+        System.out.println("Kulit: " + Kulit);
+        System.out.println(); // baris kosong untuk pemisah
+    }
+}
+
+//kelas main
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Pilih jenis login:");
-        System.out.println("1. Admin");
-        System.out.println("2. Mahasiswa");
-        System.out.print("Masukkan pilihan (1/2): ");
-        int pilihan = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        //membuat objek hewan1
+        Hewan hewan1 = new Hewan();
+        hewan1.Nama = "Harimau";
+        hewan1.Jenis = "Mamalia";
+        hewan1.Suara = "RAWRRRR";
+        hewan1.Kulit = "loreng hitam oren";
 
-        if (pilihan == 1) {
-            System.out.print("Masukkan username: ");
-            String username = scanner.nextLine();
-            System.out.print("Masukkan password: ");
-            String password = scanner.nextLine();
+        //membuat objek hewan2
+        Hewan hewan2 = new Hewan();
+        hewan2.Nama = "Sapi";
+        hewan2.Jenis = "Mamalia";
+        hewan2.Suara = "MOOOOOOO";
+        hewan2.Kulit = "hitam putih";
 
-            if (username.equals("Admin472") && password.equals("Password472")) {
-                System.out.println("Login Admin berhasil!");
-            } else {
-                System.out.println("Login gagal! Username atau password salah.");
-            }
-        } else if (pilihan == 2) {
-            System.out.print("Masukkan Nama: ");
-            String nama = scanner.nextLine();
-            System.out.print("Masukkan NIM: ");
-            String nim = scanner.nextLine();
-
-            if (nama.equals("Muhammad Daffa Priyantana") && nim.equals("202310370311472")) {
-                System.out.println("Login Mahasiswa berhasil!");
-                System.out.println("Nama: " + nama);
-                System.out.println("NIM: " + nim);
-            } else {
-                System.out.println("Login gagal! Nama atau NIM salah.");
-            }
-        } else {
-            System.out.println("Pilihan tidak valid.");
-        }
-
-        scanner.close();
+        //Menampilkan informasi hewan 1 dan hewan 2
+        hewan1.tampilkanInfo();
+        hewan2.tampilkanInfo();
     }
 }
